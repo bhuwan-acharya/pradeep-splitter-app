@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context/AppContext";
 import Button from "./Button";
 
@@ -15,7 +15,7 @@ const Calculate = () => {
   } = useGlobalContext();
 
   function result() {
-    if (amount != null && tip != null && people != 0) {
+    if (amount !== null && tip !== null && people !== 0) {
       let tip_per_person = ((tip / 100) * amount) / people;
       let total_per_person = ((1 + tip / 100) * amount) / people;
       setTipPP(tip_per_person);
@@ -25,6 +25,7 @@ const Calculate = () => {
 
   useEffect(() => {
     result();
+    // eslint-disable-next-line
   }, [people, amount, tip]);
 
   return (
@@ -55,14 +56,14 @@ const Calculate = () => {
       <form className="number-of-people">
         <div className="label-container">
           <label htmlFor="total-people">Number of people</label>
-          {people == 0 && people != "" && (
+          {people === 0 && people !== "" && (
             <label className="error-label">Can't be zero</label>
           )}
         </div>
         <input
           type="number"
           className={`${
-            people == 0 && people != ""
+            people === 0 && people !== ""
               ? "total-people input-field input-error-field"
               : " total-people input-field "
           }`}

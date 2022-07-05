@@ -18,7 +18,7 @@ const Button = () => {
         return (
           <button
             id={id}
-            className={`${activeID == id ? "active-amount" : "amount"}`}
+            className={`${activeID === id ? "active-amount" : "amount"}`}
             key={i}
             value={value}
             onClick={(e) => {
