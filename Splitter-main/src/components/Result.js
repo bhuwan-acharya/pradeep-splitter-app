@@ -35,7 +35,7 @@ const Result = () => {
         <div className="btn-container">
           <button
             className={`${
-              people != "" || tip != "" || amount != ""
+              people !== "" || tip !== "" || amount !== ""
                 ? "reset-btn"
                 : "reset-btn noHover"
             }`}
