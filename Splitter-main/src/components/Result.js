@@ -14,6 +14,7 @@ const Result = () => {
     setTipPP,
     setTotalPP,
     setActiveID,
+    // test
   } = useGlobalContext();
   return (
     <section className="result-section">
